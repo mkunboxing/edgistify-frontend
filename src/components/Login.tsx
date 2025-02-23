@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Lottie from 'lottie-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import loginAnimation from '../assets/login.json';
 import { useDispatch } from 'react-redux';
 import { login } from '../store/authSlice';
@@ -62,7 +62,7 @@ const Login = () => {
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
-              setError(''); // Clear error on input change
+              setError('');
             }}
             className="w-full p-2 border border-gray-300 rounded"
             required
@@ -75,15 +75,21 @@ const Login = () => {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setError(''); // Clear error on input change
+              setError('');
             }}
             className="w-full p-2 border border-gray-300 rounded"
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700">
+        <button type="submit" className="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 mb-4">
           Login
         </button>
+        <p className="text-center text-gray-600">
+          Don't have an account?{' '}
+          <Link to="/signup" className="text-blue-600 hover:text-blue-800">
+            Sign Up
+          </Link>
+        </p>
       </form>
     </div>
   );
