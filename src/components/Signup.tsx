@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import loginAnimation from '../assets/login.json';
+import signupAnimation from '../assets/signup.json';
 import Lottie from 'lottie-react';
 import { useDispatch } from 'react-redux';
 import { login } from '../store/authSlice';
@@ -49,7 +49,7 @@ const Signup = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 via-blue-50 to-purple-100">
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-80">
-        <Lottie animationData={loginAnimation} />
+        <Lottie animationData={signupAnimation} />
         <h2 className="text-2xl mb-4">Create an Account</h2>
         {error && <p className="text-red-500">{error}</p>}
         <div className="mb-4">

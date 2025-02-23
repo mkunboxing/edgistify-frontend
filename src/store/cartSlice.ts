@@ -81,7 +81,7 @@ export const removeFromCartAsync = createAsyncThunk<CartItem[], string>(
     if (!response.ok) {
       throw new Error('Failed to remove item from cart');
     }
-    const data = await response.json();
+    // const data = await response.json();
     // After removing, fetch the updated cart items
     const cartResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/get-cart-items`, {
       headers: {
